@@ -5,7 +5,7 @@
 }
 
 body {
-    font-family:'Segoe UI', sans-serif;
+    font-family: 'Segoe UI', sans-serif;
 
     margin: 0;
     padding: 0;
@@ -15,30 +15,50 @@ body {
     align-items: center;
     min-height: 100vh;
     background: #f6f6f6;
-  }
-  
-  .elevator-container {
+}
+
+.elevator-container {
     display: flex;
     flex-direction: row;
     gap: 20px;
 
     column-gap: 3rem;
 
-  }
-  
-  .elevator-shaft {
+}
+
+.elevator-shaft {
     position: relative;
     width: 100px;
     height: 500px;
     background: #ccc;
+
+    box-shadow: inset 4px 4px 16px hsl(0 0% 23% / 0.4);
+    overflow: hidden;
+
     border: 2px solid #333;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     overflow: hidden;
-  }
-  
-  .elevator {
+
+    /* background-image: 
+    repeating-linear-gradient(
+      90deg, 
+      rgba(100, 100, 100, 0.8), 
+      rgba(100, 100, 100, 0.8) 5px, 
+      transparent 5px, 
+      transparent 10px
+    ),
+    repeating-linear-gradient(
+      -45deg, 
+      rgba(50, 50, 50, 0.6), 
+      rgba(50, 50, 50, 0.6) 2px, 
+      transparent 20px, 
+      transparent 25px
+    ); */
+}
+
+.elevator {
     position: absolute;
     display: grid;
     place-content: center;
@@ -51,70 +71,69 @@ body {
     border: 2px solid #000;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
     transition: transform 1s cubic-bezier(0.4, 0.0, 0.2, 1);
-  }
-  
-  .floor-buttons {
+}
+
+.floor-buttons {
     display: flex;
     flex-direction: column;
     gap: 10px;
-  }
+}
 
-  .panel {
+.panel {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr 1fr;
     gap: 0.5em;
-    
-  }
 
-  .panel button {
+}
+
+.panel button {
     padding: 10px 15px;
     margin: 5px 0;
     font-size: 16px;
     cursor: pointer;
-  }
+}
 
-  .pushed {
+.pushed {
     background: lightblue;
-  }
+}
 
-  .floor button {
+.floor button {
     cursor: pointer;
-  }
-  
-  .floors {
+}
+
+.floors {
     display: flex;
     flex-direction: column;
-  }
-  
-  .floor {
+}
+
+.floor {
     border-top: 1px solid #ddd;
     display: flex;
-    
+
     justify-content: space-between;
     gap: 0.5rem;
     padding-inline: 1rem;
     padding-block: 0.9rem;
-  }
+}
 
-
-  .elevator-display {
+.elevator-display {
     padding: 0.3rem;
     height: 200px;
     width: 100%;
     background-color: #fff;
-    overflow-y: auto; /* Ensure scrolling works */
+    overflow-y: auto;
+    /* Ensure scrolling works */
     display: flex;
-  }
-  
+}
 
-  .bold {
+.bold {
     display: block;
     font-weight: bold;
     margin-block: 0.5rem 0.2rem;
-  }
+}
 
-  .flex-layout {
+.flex-layout {
     display: flex;
-    
-  }
+
+}
