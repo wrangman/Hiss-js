@@ -1,8 +1,9 @@
-const elevator = document.getElementById("elevator");
-const buttons = document.querySelectorAll("[data-floor]");
-const display = document.querySelector(".elevator-display");
-const leftDoor = document.querySelector(".door-left");
-const rightDoor = document.querySelector(".door-right");
+const elevator = document.getElementById('elevator');
+const buttons = document.querySelectorAll('[data-floor]');
+const btnResetDisplay = document.getElementById('btn-reset-display');
+const display = document.querySelector('.elevator-display');
+const leftDoor = document.querySelector('.door-left');
+const rightDoor = document.querySelector('.door-right');
 
 const totalFloors = 10;
 const floorHeight = 50;
@@ -44,9 +45,9 @@ buttons.forEach(button => {
     if (floor >= 1 && floor <= totalFloors && floor !== activeFloor && !isMoving) {
       isMoving = true; // Lock actions while moving
       button.classList.add('pushed');
-      updateDisplay("Stänger dörrarna...");
+      updateDisplay("Åker till våning:", floor);
 
-      closeDoors(() => {
+      closeDoors(() => {    
         moveToFloor(floor, () => {
           updateDisplay("Du är på våning:", floor);
           activeFloor = floor; // Update current floor
@@ -56,12 +57,19 @@ buttons.forEach(button => {
           });
         });
       });
+
     } else if (floor === activeFloor) {
       updateDisplay("Du är redan på våning:", floor);
+
     } else if (isMoving) {
       updateDisplay("Hissen rör sig, vänligen vänta.");
+
     } else {
       updateDisplay("Ogiltig våning:", floor);
     }
   });
 });
+
+btnResetDisplay.addEventListener('click', () => {
+  display.innerHTML = "";
+})

@@ -4,6 +4,11 @@
     box-sizing: border-box;
 }
 
+
+*:active > * {
+    outline: 1px solid red;
+}
+
 body {
     display: flex;
     flex-direction: column;
@@ -21,7 +26,7 @@ body {
 
 .elevator-container {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1.618fr 1fr;
     gap: 2rem;
 }
 
@@ -84,7 +89,7 @@ body {
     height: 48px;
     border: 2px solid rgb(7, 61, 79);
     background-color: rgb(0, 18, 24);
-    box-shadow: 0 0 8px rgba(7, 61, 79, 0.9);
+    box-shadow: 0 0 8px rgba(0, 24, 32, 0.9);
     
     transition: transform 1s cubic-bezier(0.4, 0.0, 0.2, 1);
 
@@ -122,30 +127,15 @@ body {
 
 .floor-buttons {
     display: flex;
+    max-width: fit-content;
     flex-direction: column;
-    
 }
 
 .panel {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr 1fr;
-    gap: 0.5em;
-}
-
-.panel button {
-    padding: 10px 15px;
-    margin: 5px 0;
-    font-size: 16px;
-    cursor: pointer;
-}
-
-.floor button {
-    cursor: pointer;
-}
-
-.pushed {
-    background: lightskyblue;
+    gap: 0.45em;
 }
 
 .floors {
@@ -176,7 +166,7 @@ body {
 .elevator-display {
     display: flex;
     padding: 0.3rem;
-    height: 200px;
+    height: 120px;
     width: 100%;
     background-color: #fff;
     border: 1px solid slategray;
@@ -185,9 +175,18 @@ body {
 }
 
 .bold {
-    display: block;
     font-weight: bold;
     margin-bottom: 0.5rem;
+
+}
+
+.caption {
+    display: block;
+    color: slategray;
+    font-weight: 200;
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+
 }
 
 .flex-layout {
@@ -197,6 +196,13 @@ body {
 
 .flex-column {
     display: flex;
+    justify-content: space-between;
     flex-direction: column;
     gap: 0.5rem;
+}
+
+.caption-layout {
+    display: flex;
+    justify-content: space-between;
+
 }
