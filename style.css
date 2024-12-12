@@ -47,10 +47,10 @@ body {
     background-image: 
         /* Horizontal steel beams at each floor */
         repeating-linear-gradient(
-            0deg, 
-            rgba(70, 70, 70, 0.9), 
-            rgba(70, 70, 70, 0.9) 1px, 
-            transparent 2px, 
+            0deg,
+            rgba(70, 70, 70, 0.9),
+            rgba(70, 70, 70, 0.9) 3px,
+            transparent 2px,
             transparent 50px
         ),
         /* Diagonal beams alternating directions */
@@ -68,6 +68,7 @@ body {
             rgba(50, 50, 50, 0.5) 3px, 
             transparent 50px
         );
+        
     background-size: 100% 50px, 100% 50px, 100% 50px; /* Align beams with floor height */
     background-blend-mode: overlay; /* Make layers blend nicely */
 }
