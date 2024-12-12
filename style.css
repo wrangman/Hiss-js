@@ -31,7 +31,7 @@ body {
 
 .elevator-shaft {
     position: relative;
-    width: 100px;
+    width: 60px;
     height: 500px;
     
     box-shadow: inset 4px 4px 12px hsl(0 0% 23% / 0.5);
@@ -112,11 +112,11 @@ body {
 }
 
 .door-left.open {
-    transform: translateX(-50%); /* Open position (slide left) */
+    transform: translateX(-66%); /* Open position (slide left) */
 }
 
 .door-right.open {
-    transform: translateX(50%); /* Open position (slide right) */
+    transform: translateX(66%); /* Open position (slide right) */
 }
 
 .floor-buttons {
@@ -162,10 +162,14 @@ body {
     justify-content: space-between;
     gap: 0.5rem;
 
-    padding-inline: 1rem 0rem;
+    padding-inline: 2rem 0rem;
     padding-block: 0;
 
     height: 50px;
+}
+
+.floor:last-child {
+    border-bottom: 1px solid #ddd;
 }
 
 .elevator-display {
